@@ -28,7 +28,7 @@ Exploratory Data Analysis (EDA) was conducted to gain an in-depth understanding 
 
 From the analysis, it was revealed that the dataset is heavily skewed towards "No emotion towards brand or product", approximately 60%, followed by positive sentiment. Negative sentiment is a minority class (<10%). This guided our decision to focus on **F1-Score** rather than just accuracy.
 
-![alt text](Sentiment_distribution.png)
+![alt text](Images/Sentiment_distribution.png)
 
 
 
@@ -43,7 +43,7 @@ Custom imputation logic recovered missing product labels by scanning tweet text 
 
 Removing handles (@), links and special characters reduced "noise", allowing the model to focus on semantic meaning rather than twitter metadata.
 
-![alt text](Most_frequent_words.png)
+![alt text](Images/Most_frequent_words.png)
 
 
 
@@ -68,10 +68,10 @@ Using GridSearchCV, the n_estimators and max_depth were optimized for our Random
 Classification threshhold was adjusted to favor Recall for the negative class, ensuring the model acts as an effective "early warning system" for brand crisis
 
 
-![alt text](Multi_class_models.png)
+![alt text](Images/Multi_class_models.png)
 
 
-![alt text](Binary_classification_models.png)
+![alt text](Images/Binary_classification_models.png)
 
 
 ### 9.	Results and Discussion
@@ -81,12 +81,12 @@ The experimental results indicate that the baseline Naive Bayes model achieved r
 
 From confusion matrix, the Random Forest model is very good at identifying tweets with no emotion towards a brand or product but struggles with emotional categories. It correctly classified 906 neutral tweets, yet often misclassified positive and negative emotions as neutral. Positive emotion had 251 correct predictions but 337 misclassified as neutral, while negative emotion had only 25 correct predictions with most errors leaning toward neutral. The rare "I can’t tell" category was barely recognized. Overall, the model is biased toward predicting neutrality, reflecting class imbalance in the data, and is less effective at distinguishing genuine sentiment.
 
-![alt text](Confusion_matrix.png)
+![alt text](Images/Confusion_matrix.png)
 
 
 The model relied heavily on brand and event terms like apple, google, ipad, and sxsw, rather than sentiment-bearing words such as like or think, which appear but are less influential. To improve the performance, there is need to rebalance the training data, incorporate features that emphasize sentiment words and consider more contextual models e.g BERT.
 
-![alt text](Feature_importance.png)
+![alt text](Images/Feature_importance.png)
 
 
 In conclusion, marketing campaigns should focus on iPad/iPhone brands as they drive the highest positive engagement.
