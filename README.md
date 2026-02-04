@@ -43,7 +43,7 @@ Custom imputation logic recovered missing product labels by scanning tweet text 
 
 Removing handles (@), links and special characters reduced "noise", allowing the model to focus on semantic meaning rather than twitter metadata.
 
-![alt text](most_frequent_words.png)
+![alt text](Most_frequent_words.png)
 
 
 
@@ -66,6 +66,13 @@ To enhance model performance, hyperparameter tuning was conducted using GridSear
 Using GridSearchCV, the n_estimators and max_depth were optimized for our Random Forest. This led to a 5% increase in validation accuracy and significantly reduced overfitting.
 
 Classification threshhold was adjusted to favor Recall for the negative class, ensuring the model acts as an effective "early warning system" for brand crisis
+
+
+![alt text](Multi_class_models.png)
+
+
+![alt text](Binary_classification_models.png)
+
 
 ### 9.	Results and Discussion
 
